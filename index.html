@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script type=module src=js/index.js></script>
 <link rel=stylesheet href=styles/index.css>
 <h1>Samuel Henry Woodard</h1>
 <a name=top></a>
@@ -19,25 +20,29 @@
 <a name=food></a>
 <section id=food>
   <h2>Food</h2>
-  <div class=day>
-    <h3>Wednesday 2021-02-17</h3>
-    <div class=meal>
-      <h4>I call it the "kitchen sink" breakfast</h3>
-      <p>
-        On top: Chinese (American) Spinach and Broccoli, sour cream, crumbled tortilla chips
-        In the middle: Two poached eggs, cheddar cheese
-        Underneath: Sauteed onions in olive oil, salsa roja, and Sol Food pique
+  <template id=meal_day>
+    <style>@import 'styles/index.css';</style>
+    <div class=day>
+      <h3>Wednesday 2021-02-17</h3>
+      <div class=meal>
+        <h4>I call it the "kitchen sink" breakfast</h3>
+        <p>
+          On top: Chinese (American) Spinach and Broccoli, sour cream, crumbled tortilla chips
+          In the middle: Two poached eggs, cheddar cheese
+          Underneath: Sauteed onions in olive oil, salsa roja, and Sol Food pique
 
-        #poachedeggs #kitodiet
-      </p>
-      <div class=images>
-        <img src=images/PXL_20210217_161804508.jpg>
-        <img src=images/PXL_20210217_161806175.jpg>
-        <img src=images/PXL_20210217_162119464.jpg>
-        <img src=images/PXL_20210217_162120333.jpg>
+          #poachedeggs #kitodiet
+        </p>
+        <div class=images>
+          <img src=images/PXL_20210217_161804508.jpg>
+          <img src=images/PXL_20210217_161806175.jpg>
+          <img src=images/PXL_20210217_162119464.jpg>
+          <img src=images/PXL_20210217_162120333.jpg>
+        </div>
       </div>
     </div>
-  </div>
+  </template>
+  <meal-day></meal-day>
   <div class=day>
     <h3>Friday 2021-02-19</h3>
     <div class=meal>
