@@ -2,6 +2,40 @@ html, body {
   font-family:Arial,sans-serif;
   margin:0;
   padding:0;
+  background:#E8E8E8;
+}
+
+nav a {
+  text-decoration:none;
+}
+
+a {
+  color:#808080;
+}
+
+header, section {
+  padding:1rem;
+}
+
+h1 {
+  margin:0;
+  padding:0;
+}
+
+p {
+  margin:0;
+  padding:0;
+}
+
+header section {
+  padding:0;
+}
+
+header section#title {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  padding:1rem 0;
 }
 
 img {
@@ -9,6 +43,13 @@ img {
   width:33%;
 }
 
-h1, section {
-  padding:10px;
+
+.meal p {
+  line-height:2rem;
+  white-space:pre-line;
+}
+
+.meal .meal--title {
+  font-style:italic;
+  font-size:1.2rem;
 }
