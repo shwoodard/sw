@@ -1,0 +1,60 @@
+- kind: Breakfast
+  day: Wednesday
+  date: 2021-02-17
+  time: Unknown
+  title: All the thingz
+  ingredients: |
+    On top: Chinese (American) Spinach and Broccoli, sour cream, crumbled tortilla chips
+    In the middle: Two poached eggs, cheddar cheese
+    Underneath: Sauteed onions in olive oil, salsa roja, and Sol Food pique
+  hunger: Unknown
+  situation: At home, working
+  images:
+    - images/PXL_20210217_161804508.jpg
+    - images/PXL_20210217_161806175.jpg
+    - images/PXL_20210217_162119464.jpg
+    - images/PXL_20210217_162120333.jpg
+  comments: |
+    Was good but felt like too much dairy and fat.
+- kind: Breakfast
+  day: Friday
+  date: 2021-02-19
+  time: Unknown
+  title: Savory Oatmeal
+  ingredients: |
+    1/4 cup cooked rolled oats
+    2 poached eggs
+    1/3 cup Indian egglant
+    Shredded cheddar
+    Raita
+    A small handfull of arugula
+    Sol food lemon garlic salad dressing
+    Sol food pique hot sause
+  hunger: Unknown
+  situation: At home, working
+  images:
+    - images/PXL_20210219_141543391.jpg
+    - images/PXL_20210219_141545935.jpg
+  comments: |
+    Felt good and healthy but I ate too much and felt bloated.
+- kind: Lunch
+  day: Saturday
+  date: 2021-02-20
+  time: 11:00 AM (Pacific)
+  title: Ham and Cheese on Sourdough, Half apple
+  ingredients: |
+    Toasted sourdough
+    Deli ham (I could taste sugar :()
+    Dijon mustard
+    Arugula
+    Red onion
+    English coastal cheddar
+
+    Half organic pink lady apple
+  hunger: Moderate to high
+  situation: Weekend, no work, talking to buddy about his birthday
+  images:
+    - images/PXL_20210220_183545607.jpg
+  comments: |
+    A few too many carbs--could have stopped eating the bread
+    Was on the phone so didn't pay attention to craving.
