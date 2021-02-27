@@ -1,0 +1,4 @@
+web-server/logs/*.log
+web-server/nginx.conf
+web-server/*.crt
+web-server/*.key

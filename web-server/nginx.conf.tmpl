@@ -1,0 +1,29 @@
+events {
+  worker_connections 4096;
+  accept_mutex on;
+}
+
+error_log BOOTSTRAP_ROOT/web-server/logs/error.log;
+
+http {
+  proxy_buffers 8 16k;
+  proxy_buffer_size 32k;
+
+  default_type  application/octet-stream;
+  include mime.types;
+  sendfile        on;
+  keepalive_timeout  65;
+
+  client_max_body_size 10M;
+
+  server {
+    listen 443 ssl;
+    ssl_certificate BOOTSTRAP_ROOT/web-server/server.crt;
+    ssl_certificate_key BOOTSTRAP_ROOT/web-server/server.key;
+    root APP_ROOT;
+    autoindex on;
+
+    index index.htm index.html;
+  }
+}
+
