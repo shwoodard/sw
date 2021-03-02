@@ -7,8 +7,9 @@ if [[ -z $1 ]]; then
   exit 1
 fi
 
+app_path=$(cd $1; pwd)
 tmpl=$(<./web-server/nginx.conf.tmpl)
-out=$(echo $tmpl | sed s%APP_ROOT%$1% | sed s%BOOTSTRAP_ROOT%$(pwd)%g)
+out=$(echo $tmpl | sed s%APP_ROOT%$app_path% | sed s%BOOTSTRAP_ROOT%$(pwd)%g)
 
 echo $out > web-server/nginx.conf
 
