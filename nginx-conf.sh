@@ -7,9 +7,13 @@ if [[ -z $1 ]]; then
   exit 1
 fi
 
+upstream_port=${PORT:-"8888"}
 app_path=$(cd $1; pwd)
 tmpl=$(<./web-server/nginx.conf.tmpl)
-out=$(echo $tmpl | sed s%APP_ROOT%$app_path% | sed s%BOOTSTRAP_ROOT%$(pwd)%g)
+out=$(echo $tmpl | \
+  sed s%APP_ROOT%$app_path% | \
+  sed s%BOOTSTRAP_ROOT%$(pwd)%g | \
+  sed s%BACKEND_PORT%$upstream_port%)
 
 echo $out > web-server/nginx.conf
 

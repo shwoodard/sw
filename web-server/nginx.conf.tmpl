@@ -3,9 +3,14 @@ events {
   accept_mutex on;
 }
 
-error_log BOOTSTRAP_ROOT/web-server/logs/error.log;
 
 http {
+  upstream backend {
+    server 0.0.0.0:BACKEND_PORT;
+  }
+
+  error_log BOOTSTRAP_ROOT/web-server/logs/error.log;
+
   proxy_buffers 8 16k;
   proxy_buffer_size 32k;
 
@@ -20,10 +25,25 @@ http {
     listen 443 ssl;
     ssl_certificate BOOTSTRAP_ROOT/web-server/server.crt;
     ssl_certificate_key BOOTSTRAP_ROOT/web-server/server.key;
-    root APP_ROOT;
-    autoindex on;
 
-    index index.htm index.html;
+    location /data {
+      return 404;
+    }
+
+    location / {
+      root APP_ROOT;
+      index index.html;
+
+      location ~ /(images|js|styles)/ {
+        index *.jpg;
+        index *.css;
+        index *.js;
+      }
+    }
+
+    location /meals {
+      proxy_pass http://backend;
+    }
   }
 }
 
