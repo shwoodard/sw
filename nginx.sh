@@ -2,5 +2,5 @@
 
 set -e
 
-./nginx-conf.sh
+./nginx-conf.sh $1
 ./nginx-start.sh
