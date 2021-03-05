@@ -6,7 +6,7 @@
 
 Backend Go app. Served on heroku in prod.
 
-##$ gh-pages
+### gh-pages
 
 Static FE, served in prod by Github Pages.
 
