@@ -3,7 +3,7 @@
 set -e
 
 if [[ -z $1 ]]; then
-  echo "Must specify root of shwoodard/sw repo as first argument"
+  echo "Must supply path to static site root as first argument"
   exit 1
 fi
 
