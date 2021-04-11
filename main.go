@@ -8,13 +8,17 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"path"
 
 	"gopkg.in/yaml.v2"
 )
 
-var meals = []*meal{}
+var (
+	staticAppPath = flag.String("static", "", "The path to the static site content. For Dev only.")
+	meals         = []*meal{}
+)
 
-var mealDataPath = flag.String("meal_data_path", "", "The path to the meal data yaml, if served locally")
+const publicMealsYAMLURL = "https://raw.githubusercontent.com/shwoodard/sw/gh-pages/data/meals.yaml"
 
 type AppEnv int
 
@@ -64,8 +68,12 @@ func main() {
 	}
 
 	var mealsData []byte
-	if *mealDataPath == "" {
-		resp, err := http.Get("https://raw.githubusercontent.com/shwoodard/sw/gh-pages/data/food.yaml")
+	if *staticAppPath == "" {
+		if appEnv == Dev {
+			log.Print("Attempting to fetch public meals data in Dev, discouraged.")
+		}
+
+		resp, err := http.Get(publicMealsYAMLURL)
 		if err != nil {
 			log.Fatalf("Failed to fetch prod food data: %v", err)
 		}
@@ -76,7 +84,12 @@ func main() {
 		}
 	} else {
 		var err error
-		mealsData, err = ioutil.ReadFile(*mealDataPath)
+
+		if appEnv == Prod {
+			log.Fatal("Local data path provided but it is unavialable in prod.")
+		}
+
+		mealsData, err = ioutil.ReadFile(path.Join(*staticAppPath, "data", "meals.yaml"))
 		if err != nil {
 			log.Fatalf("Failed to read prod food data: %v", err)
 		}
